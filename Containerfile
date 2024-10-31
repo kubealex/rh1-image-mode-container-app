@@ -1,5 +1,5 @@
 MAINTAINER Alessandro Rossi <al.rossi87@gmail.com>
-FROM service-vm.rh-lab.labs:3000/gitea/rhel-image-mode-demo:iso
+FROM service-vm.rh-lab.labs:3000/gitea/rhel-image-mode-demo:soe
 RUN dnf -y install httpd && \
     systemctl enable httpd && \
     mv /var/www /usr/share/www && \
