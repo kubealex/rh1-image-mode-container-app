@@ -1,5 +1,5 @@
 MAINTAINER Alessandro Rossi <al.rossi87@gmail.com>
-FROM service-vm.rh-lab.labs:3000/gitea/rhel-image-mode-demo:soe
+FROM quay.io/kubealex/rhel-image-mode-demo:soe
 RUN dnf install -y java-11-openjdk.x86_64 mariadb-server
 RUN systemctl enable mariadb
 RUN ln -s /usr/lib/jvm/java-11-openjdk-11.0.22.0.7-2.el9.x86_64/bin/java /usr/bin/java
