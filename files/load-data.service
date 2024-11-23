@@ -1,0 +1,10 @@
+[Unit]
+Description=Load Pet Clinic data
+ConditionFirstBoot=yes
+
+[Service]
+Type=oneshot
+ExecStart=/home/bootc-user/load_application_data.sh
+
+[Install]
+WantedBy=multi-user.target
