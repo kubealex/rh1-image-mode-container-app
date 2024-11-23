@@ -1,10 +1,10 @@
 [Unit]
 Description=Load Pet Clinic data
-ConditionPathExists=/home/bootc-user/load_application_data.sh
+ConditionPathExists=/home/bootc-user/load_data
 
 [Service]
 Type=oneshot
-ExecStart=/home/bootc-user/load_application_data.sh
+ExecStart=/usr/local/bin/load_application_data.sh
 
 [Install]
 WantedBy=multi-user.target
