@@ -1,6 +1,6 @@
 [Unit]
 Description=Load Pet Clinic data
-ConditionFirstBoot=yes
+ConditionPathExists==/home/bootc-user/load_application_data.sh
 
 [Service]
 Type=oneshot
