@@ -6,4 +6,7 @@ RUN rm /usr/bin/java && ln -s /usr/lib/jvm/jre-11-openjdk/bin/java /usr/bin/java
 COPY files/*.jar /opt/spring-petclinic.jar
 COPY files/petclinic.service /usr/lib/systemd/system/petclinic.service
 COPY files/petclinic.sql /opt/petclinic.sql
-RUN systemctl enable petclinic
+COPY files/load_application_data.sh /home/bootc-user
+COPY files/load-data.service /usr/lib/systemd/system/load-data.service
+RUN chown bootc-user:bootc-user /home/bootc-user/load_application_data.sh && chmod 755 /home/bootc-user/load_application_data.sh
+RUN systemctl enable petclinic load-data
