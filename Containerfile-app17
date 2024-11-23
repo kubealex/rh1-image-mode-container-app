@@ -5,5 +5,4 @@ RUN systemctl enable mariadb
 RUN rm /usr/bin/java && ln -s /usr/lib/jvm/jre-17-openjdk/bin/java /usr/bin/java
 COPY files/*.jar /opt/spring-petclinic.jar
 COPY files/petclinic.service /usr/lib/systemd/system/petclinic.service
-COPY files/petclinic.sql /opt/petclinic.sql
 RUN systemctl enable petclinic
