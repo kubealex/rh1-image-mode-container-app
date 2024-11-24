@@ -1,6 +1,7 @@
 [Unit]
 Description=Load Pet Clinic data
 ConditionPathExists=/home/bootc-user/load_data
+After=mysqld.service
 
 [Service]
 Type=oneshot
