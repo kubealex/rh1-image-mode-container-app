@@ -1,7 +1,8 @@
 MAINTAINER Alessandro Rossi <al.rossi87@gmail.com>
 ARG REGISTRY_URL=gitea.example.com
 ARG REGISTRY_USER=gitea
-FROM $REGISTRY_URL/$REGISTRY_USER/rhel-image-mode-demo:soeRUN dnf install -y java-11-openjdk.x86_64 mariadb-server
+FROM $REGISTRY_URL/$REGISTRY_USER/rhel-image-mode-demo:soe
+RUN dnf install -y java-11-openjdk.x86_64 mariadb-server
 RUN systemctl enable mariadb
 RUN rm /usr/bin/java && ln -s /usr/lib/jvm/jre-11-openjdk/bin/java /usr/bin/java
 COPY files/*.jar /opt/spring-petclinic.jar
